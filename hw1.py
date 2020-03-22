@@ -25,7 +25,7 @@ def top5_countries_by_date(day: int, month: int, year: int = 2020) -> List[str]:
   return list(countries)
    
 # Function name is wrong, read the pydoc
-def no_new_cases_count(day: int, month: int, year: int = 2020) -> int:
+def no_new_cases(day: int, month: int, year: int = 2020) -> int:
     dataLOL=datetime.date(year,month,day)
     Gnomdate=dataLOL-datetime.timedelta(days=1)
  
