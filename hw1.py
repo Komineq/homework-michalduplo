@@ -21,9 +21,9 @@ def top5_countries_by_date(day: int, month: int, year: int = 2020) -> List[str]:
    
   daterino = datetime.date(year, month, day)
   daterini = daterino.strftime('%m/%d/%y').lstrip("0").replace(" 0", " ").replace("/0","/")
-  countries = confirmed_cases[["Country/Region", daterini]].groupby(["Country/Region"]).sum().sort_values(by=daterini, ascending=False).head(5)
+  countries = confirmed_cases[['Country/Region', daterini]].groupby(['Country/Region']).sum().sort_values(by=daterini, ascending=False).head(5).index
   
-  return list(countries.index)
+  return list(countries)
    
 
 def no_new_cases_count(day: int, month: int, year: int = 2020) -> int:
