@@ -26,8 +26,10 @@ def top5_countries_by_date(day: int, month: int, year: int = 2020) -> List[str]:
    
 # Function name is wrong, read the pydoc
 def no_new_cases_count(day: int, month: int, year: int = 2020) -> int:
-  Dait1 = datetime.date(year, month, day)
-  dateOneS = dait1.strftime('%m/%d/%y').lstrip("0").replace(" 0", " ").replace("/0", "/")
-  Dait2 = dait1 - datetime.timedelta(days=1)
-  dateTwoS = dait2.strftime('%m/%d/%y').lstrip("0").replace(" 0", " ").replace("/0", "/")
-  return len( confirmed_cases.loc[ confirmed_cases[ dateOneS ] - confirmed_cases[ dateTwoS ]!=0 ].index)
+    dataLOL=datetime.date(year,month,day)
+    Gnomdate=dataLOL-datetime.timedelta(days=1)
+ 
+    xyzdata = dataLOL.strftime('%-m/%-d/%y')
+    xyzyzyz_data = Gnomdate.strftime('%-m/%-d/%y')
+ 
+    return confirmed_cases.loc[(confirmed_cases[xyzdata] - confirmed_cases[ xyzyzyz_data]) != 0].count()[-1]
