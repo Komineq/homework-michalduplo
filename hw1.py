@@ -8,6 +8,7 @@ CONFIRMED_CASES_URL = f"https://raw.githubusercontent.com/CSSEGISandData/COVID-1
 confirmed_cases = pd.read_csv(CONFIRMED_CASES_URL, error_bad_lines=False)
 
 
+
 def poland_cases_by_date(day: int, month: int, year: int = 2020) -> int:
   
   rok = year % 100
